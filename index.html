@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BLER Contenido Digital | Ebooks y contenido digital</title>
+
+  <meta
+    name="description"
+    content="Descubre ebooks y contenido digital creado para aprender, crecer y mejorar. BLER Contenido Digital."
+  >
+
+  <meta name="theme-color" content="#3733e6">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="BLER Contenido Digital">
+  <meta
+    property="og:description"
+    content="Ebooks y contenido digital para aprender, crecer y llevar tus ideas al siguiente nivel."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo.png">
+
+  <style>
+
+    /* ===========================
+       VARIABLES DE MARCA
+    =========================== */
+
+    :root {
+      --black: #050509;
+      --navy: #090b32;
+      --navy-light: #11144c;
+      --blue: #3e38e8;
+      --blue-light: #594fff;
+      --yellow: #ffe735;
+      --magenta: #d82eff;
+      --cyan: #48e7f4;
+      --white: #ffffff;
+      --soft-white: #f5f5f8;
+      --gray: #a8a9b8;
+      --card: #10123a;
+
+      --radius: 24px;
+      --shadow: 0 25px 70px rgba(0,0,0,.35);
+    }
+
+
+    /* ===========================
+       RESET
+    =========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* ===========================
+       UTILIDADES
+    =========================== */
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-title {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .section-subtitle {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin-bottom: 55px;
+    }
+
+    .highlight {
+      color: var(--yellow);
+    }
+
+
+    /* ===========================
+       HEADER
+    =========================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background: rgba(5,5,15,.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    nav {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-dot {
+      width: 13px;
+      height: 13px;
+      background: var(--yellow);
+      border-radius: 50%;
+      box-shadow: 0 0 25px var(--yellow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: .95rem;
+      color: #dedee6;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--yellow);
+    }
+
+    .nav-button {
+      padding: 12px 22px;
+      border-radius: 50px;
+
+      background: var(--yellow);
+      color: #111 !important;
+
+      font-weight: 800;
+    }
+
+    .menu-button {
+      display: none;
+      font-size: 1.7rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+
+    /* ===========================
+       HERO
+    =========================== */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+
+      padding: 145px 0 90px;
+
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(75,61,255,.35),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 30% 80%,
+          rgba(216,46,255,.12),
+          transparent 25%
+        ),
+        linear-gradient(
+          120deg,
+          #020206 0%,
+          #090b32 45%,
+          #3733df 100%
+        );
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+
+      width: 320px;
+      height: 320px;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+
+      filter: blur(150px);
+
+      opacity: .1;
+
+      top: 10%;
+      right: 5%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 9px 15px;
+      margin-bottom: 24px;
+
+      border-radius: 50px;
+
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.07);
+
+      font-size: .88rem;
+    }
+
+    .badge span {
+      color: var(--yellow);
+    }
+
+    .hero h1 {
+      font-size: clamp(3.3rem, 7vw, 6.7rem);
+      line-height: .94;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero-description {
+      color: #d1d1dc;
+
+      max-width: 610px;
+
+      font-size: 1.12rem;
+
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      padding: 16px 27px;
+
+      border-radius: 50px;
+
+      font-weight: 800;
+
+      transition: .25s;
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(255,231,53,.25);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.07);
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: black;
+    }
+
+
+    /* LOGO CARD */
+
+    .logo-card {
+      position: relative;
+
+      border-radius: 34px;
+      overflow: hidden;
+
+      box-shadow: var(--shadow);
+
+      transform: rotate(2deg);
+
+      transition: .4s;
+    }
+
+    .logo-card:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .logo-card img {
+      width: 100%;
+    }
+
+    .floating-pill {
+      position: absolute;
+
+      bottom: 25px;
+      left: -25px;
+
+      background: white;
+      color: #111;
+
+      padding: 15px 23px;
+
+      border-radius: 18px;
+
+      font-weight: 900;
+
+      box-shadow: var(--shadow);
+    }
+
+
+    /* ===========================
+       BENEFICIOS
+    =========================== */
+
+    .features {
+      background: #070714;
+    }
+
+    .feature-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 22px;
+    }
+
+    .feature {
+      padding: 34px;
+
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.08),
+          rgba(255,255,255,.025)
+        );
+
+      border: 1px solid rgba(255,255,255,.09);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+
+      border-radius: 15px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--yellow);
+      color: #111;
+
+      font-size: 1.5rem;
+
+      margin-bottom: 24px;
+    }
+
+    .feature h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: var(--gray);
+    }
+
+
+    /* ===========================
+       TIENDA / LANDING
+    =========================== */
+
+    #tienda {
+      background:
+        radial-gradient(
+          circle at 100% 20%,
+          rgba(62,56,232,.17),
+          transparent 30%
+        ),
+        #090914;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 25px;
+    }
+
+    .product-card {
+      border-radius: 28px;
+
+      overflow: hidden;
+
+      background: #101026;
+
+      border: 1px solid rgba(255,255,255,.08);
+
+      transition: .35s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,231,53,.35);
+    }
+
+    .product-cover {
+      height: 330px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 40px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .product-card:nth-child(1) .product-cover {
+      background:
+        linear-gradient(
+          145deg,
+          #3733e6,
+          #111249
+        );
+    }
+
+    .product-card:nth-child(2) .product-cover {
+      background:
+        linear-gradient(
+          145deg,
+          #d82eff,
+          #3733e6
+        );
+    }
+
+    .product-card:nth-child(3) .product-cover {
+      background:
+        linear-gradient(
+          145deg,
+          #ffe735,
+          #ff9d00
+        );
+    }
+
+    .ebook-placeholder {
+      width: 185px;
+      height: 250px;
+
+      padding: 25px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background: #050509;
+
+      border-radius: 5px 14px 14px 5px;
+
+      box-shadow: 20px 25px 45px rgba(0,0,0,.4);
+
+      transform: rotate(-5deg);
+    }
+
+    .ebook-placeholder small {
+      color: var(--yellow);
+      font-weight: 800;
+    }
+
+    .ebook-placeholder strong {
+      font-size: 1.6rem;
+      line-height: 1.05;
+    }
+
+    .product-content {
+      padding: 28px;
+    }
+
+    .product-category {
+      color: var(--yellow);
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      font-size: .72rem;
+
+      font-weight: 900;
+    }
+
+    .product-content h3 {
+      font-size: 1.45rem;
+      margin: 8px 0 10px;
+    }
+
+    .product-content p {
+      color: var(--gray);
+      font-size: .95rem;
+      margin-bottom: 25px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+    }
+
+    .price {
+      font-size: 1.55rem;
+      font-weight: 900;
+    }
+
+    .buy {
+      background: var(--yellow);
+      color: #111;
+
+      padding: 12px 18px;
+
+      border-radius: 50px;
+
+      font-weight: 900;
+
+      transition: .25s;
+    }
+
+    .buy:hover {
+      transform: scale(1.05);
+    }
+
+
+    /* ===========================
+       BANNER
+    =========================== */
+
+    .banner {
+      padding: 90px 0;
+
+      background:
+        linear-gradient(
+          110deg,
+          var(--blue),
+          #6559ff
+        );
+    }
+
+    .banner-box {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 40px;
+    }
+
+    .banner h2 {
+      font-size: clamp(2.4rem,5vw,4.3rem);
+      line-height: 1;
+      max-width: 700px;
+      letter-spacing: -2px;
+    }
+
+    .smiley {
+      width: 150px;
+      height: 150px;
+
+      flex-shrink: 0;
+
+      background: var(--yellow);
+
+      color: #111;
+
+      border-radius: 50% 45% 52% 45%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 4.5rem;
+
+      transform: rotate(7deg);
+
+      box-shadow: 0 20px 50px rgba(0,0,0,.22);
+    }
+
+
+    /* ===========================
+       BLOG
+    =========================== */
+
+    #blog {
+      background: #f5f5f7;
+      color: #111;
+    }
+
+    #blog .section-subtitle {
+      color: #656575;
+    }
+
+    .blog-grid {
+      display: grid;
+
+      grid-template-columns: 1.25fr .75fr .75fr;
+
+      gap: 24px;
+    }
+
+    .article {
+      background: white;
+
+      border-radius: 25px;
+
+      overflow: hidden;
+
+      border: 1px solid #e9e9ef;
+
+      transition: .3s;
+    }
+
+    .article:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,.08);
+    }
+
+    .article-image {
+      min-height: 230px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #090b32,
+          #3e38e8
+        );
+
+      padding: 28px;
+
+      display: flex;
+      align-items: flex-end;
+
+      color: white;
+    }
+
+    .article:first-child .article-image {
+      min-height: 320px;
+    }
+
+    .article:nth-child(2) .article-image {
+      background:
+        linear-gradient(
+          145deg,
+          #ffe735,
+          #ff9f17
+        );
+
+      color: #111;
+    }
+
+    .article:nth-child(3) .article-image {
+      background:
+        linear-gradient(
+          145deg,
+          #d82eff,
+          #7429ff
+        );
+    }
+
+    .article-number {
+      font-size: 4rem;
+      font-weight: 900;
+      opacity: .85;
+    }
+
+    .article-content {
+      padding: 27px;
+    }
+
+    .article-tag {
+      font-size: .73rem;
+      font-weight: 900;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .article h3 {
+      font-size: 1.35rem;
+      line-height: 1.25;
+      margin: 9px 0 12px;
+    }
+
+    .article p {
+      color: #6c6c79;
+      font-size: .94rem;
+    }
+
+    .read-more {
+      display: inline-block;
+
+      margin-top: 20px;
+
+      font-weight: 900;
+      color: var(--blue);
+    }
+
+
+    /* ===========================
+       NEWSLETTER
+    =========================== */
+
+    .newsletter {
+      padding: 100px 0;
+
+      background:
+        radial-gradient(
+          circle at 0% 50%,
+          rgba(216,46,255,.14),
+          transparent 30%
+        ),
+        #070713;
+    }
+
+    .newsletter-card {
+      padding: 65px;
+
+      border-radius: 35px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(62,56,232,.25),
+          rgba(255,255,255,.05)
+        );
+
+      border: 1px solid rgba(255,255,255,.1);
+
+      text-align: center;
+    }
+
+    .newsletter-card h2 {
+      font-size: clamp(2.2rem,5vw,4rem);
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .newsletter-card p {
+      color: var(--gray);
+
+      max-width: 600px;
+
+      margin: 0 auto 30px;
+    }
+
+    .email-form {
+      display: flex;
+
+      max-width: 550px;
+
+      margin: auto;
+
+      background: white;
+
+      padding: 6px;
+
+      border-radius: 50px;
+    }
+
+    .email-form input {
+      flex: 1;
+
+      border: none;
+      outline: none;
+
+      padding: 15px 20px;
+
+      font-size: 1rem;
+
+      border-radius: 50px;
+    }
+
+    .email-form button {
+      border: none;
+
+      padding: 15px 24px;
+
+      border-radius: 50px;
+
+      background: var(--yellow);
+      color: #111;
+
+      font-weight: 900;
+
+      cursor: pointer;
+    }
+
+
+    /* ===========================
+       FOOTER
+    =========================== */
+
+    footer {
+      padding: 65px 0 30px;
+
+      background: #030305;
+
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .footer-grid {
+      display: grid;
+
+      grid-template-columns: 2fr 1fr 1fr;
+
+      gap: 50px;
+
+      padding-bottom: 50px;
+    }
+
+    .footer-brand h2 {
+      font-size: 2rem;
+      margin-bottom: 13px;
+    }
+
+    .footer-brand p {
+      color: var(--gray);
+      max-width: 400px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+
+      color: var(--gray);
+
+      margin: 8px 0;
+    }
+
+    .footer-column a:hover {
+      color: var(--yellow);
+    }
+
+    .copyright {
+      padding-top: 25px;
+
+      border-top: 1px solid rgba(255,255,255,.08);
+
+      color: #777887;
+
+      font-size: .87rem;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    /* ===========================
+       ANIMACIONES
+    =========================== */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(35px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+
+    @media(max-width: 900px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .logo-card {
+        max-width: 550px;
+        margin: auto;
+      }
+
+      .feature-grid,
+      .products {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .blog-grid .article:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+
+    @media(max-width: 720px) {
+
+      .nav-links {
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        background: #08091e;
+
+        flex-direction: column;
+
+        padding: 28px;
+
+        display: none;
+
+        border-bottom: 1px solid rgba(255,255,255,.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .feature-grid,
+      .products,
+      .blog-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-grid .article:first-child {
+        grid-column: auto;
+      }
+
+      .banner-box {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .newsletter-card {
+        padding: 45px 20px;
+      }
+
+      .email-form {
+        flex-direction: column;
+        background: transparent;
+        gap: 10px;
+      }
+
+      .email-form input,
+      .email-form button {
+        width: 100%;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .floating-pill {
+        left: 12px;
+      }
+
+      .copyright {
+        flex-direction: column;
+        text-align: center;
+      }
+
+    }
+
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- ===========================
+     HEADER
+=========================== -->
+
+<header>
+
+  <div class="container">
+
+    <nav>
+
+      <a href="#" class="brand">
+        <span class="brand-dot"></span>
+        BLER
+      </a>
+
+      <div class="nav-links" id="navLinks">
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#tienda">Ebooks</a>
+
+        <a href="#blog">Blog</a>
+
+        <a href="#nosotros">Nosotros</a>
+
+        <a href="#redes">Redes</a>
+
+        <a href="#tienda" class="nav-button">
+          Ver contenido
+        </a>
+
+      </div>
+
+      <button class="menu-button" id="menuButton">
+        ☰
+      </button>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<!-- ===========================
+     HERO
+=========================== -->
+
+<section class="hero" id="inicio">
+
+  <div class="container">
+
+    <div class="hero-grid">
+
+      <div>
+
+        <div class="badge">
+          <span>●</span>
+          Contenido digital que vale la pena guardar
+        </div>
+
+        <h1>
+          Ideas que puedes
+          <span>llevar contigo.</span>
+        </h1>
+
+        <p class="hero-description">
+
+          Descubre ebooks y contenido digital creado para ayudarte
+          a aprender, crecer y convertir información en resultados.
+
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#tienda" class="btn btn-primary">
+            Explorar ebooks →
+          </a>
+
+          <a href="#blog" class="btn btn-secondary">
+            Leer nuestro blog
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="logo-card">
+
+        <!-- TU LOGO -->
+        <img
+          src="logo.png"
+          alt="BLER Contenido Digital"
+        >
+
+        <div class="floating-pill">
+          100% Digital ⚡
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===========================
+     BENEFICIOS
+=========================== -->
+
+<section class="section features">
+
+  <div class="container">
+
+    <div class="feature-grid">
+
+      <div class="feature reveal">
+
+        <div class="feature-icon">
+          ⚡
+        </div>
+
+        <h3>Acceso rápido</h3>
+
+        <p>
+          Obtén contenido digital que puedes consultar
+          desde tu celular, tablet o computadora.
+        </p>
+
+      </div>
+
+
+      <div class="feature reveal">
+
+        <div class="feature-icon">
+          ✦
+        </div>
+
+        <h3>Contenido de valor</h3>
+
+        <p>
+          Información diseñada para ser práctica,
+          clara y fácil de aplicar.
+        </p>
+
+      </div>
+
+
+      <div class="feature reveal">
+
+        <div class="feature-icon">
+          ↗
+        </div>
+
+        <h3>Aprende a tu ritmo</h3>
+
+        <p>
+          Compra una vez y consulta tus ebooks
+          cuando y donde quieras.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===========================
+     TIENDA / LANDING PAGE
+=========================== -->
+
+<section class="section" id="tienda">
+
+  <div class="container">
+
+    <h2 class="section-title reveal">
+      Encuentra tu próxima
+      <span class="highlight">gran lectura.</span>
+    </h2>
+
+    <p class="section-subtitle reveal">
+
+      Aquí podrás colocar todos tus ebooks.
+      Solo cambia el nombre, descripción, precio
+      y enlace de compra de cada producto.
+
+    </p>
+
+
+    <div class="products">
+
+
+      <!-- PRODUCTO 1 -->
+
+      <article class="product-card reveal">
+
+        <div class="product-cover">
+
+          <!--
+          Cuando tengas portada real puedes reemplazar
+          todo ebook-placeholder por:
+
+          <img src="ebook1.jpg" alt="Nombre del ebook">
+          -->
+
+          <div class="ebook-placeholder">
+
+            <small>BLER DIGITAL</small>
+
+            <strong>
+              NOMBRE<br>
+              DEL EBOOK
+            </strong>
+
+            <small>EBOOK DIGITAL</small>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-content">
+
+          <span class="product-category">
+            Ebook
+          </span>
+
+          <h3>
+            Nombre de tu primer ebook
+          </h3>
+
+          <p>
+            Escribe aquí una descripción breve que explique
+            qué aprenderá la persona al comprar este ebook.
+          </p>
+
+          <div class="product-bottom">
+
+            <span class="price">
+              $99 MXN
+            </span>
+
+            <!-- CAMBIA # POR TU LINK DE COMPRA -->
+
+            <a href="#" class="buy">
+              Comprar
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PRODUCTO 2 -->
+
+      <article class="product-card reveal">
+
+        <div class="product-cover">
+
+          <div class="ebook-placeholder">
+
+            <small>BLER DIGITAL</small>
+
+            <strong>
+              SEGUNDO<br>
+              EBOOK
+            </strong>
+
+            <small>EBOOK DIGITAL</small>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-content">
+
+          <span class="product-category">
+            Ebook
+          </span>
+
+          <h3>
+            Nombre de tu segundo ebook
+          </h3>
+
+          <p>
+            Utiliza este espacio para comunicar el beneficio
+            principal del producto.
+          </p>
+
+          <div class="product-bottom">
+
+            <span class="price">
+              $129 MXN
+            </span>
+
+            <a href="#" class="buy">
+              Comprar
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PRODUCTO 3 -->
+
+      <article class="product-card reveal">
+
+        <div class="product-cover">
+
+          <div
+            class="ebook-placeholder"
+            style="background:#ffffff;color:#111;"
+          >
+
+            <small style="color:#3733e6;">
+              BLER DIGITAL
+            </small>
+
+            <strong>
+              NUEVA<br>
+              GUÍA
+            </strong>
+
+            <small style="color:#3733e6;">
+              EBOOK DIGITAL
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-content">
+
+          <span class="product-category">
+            Ebook
+          </span>
+
+          <h3>
+            Próximamente
+          </h3>
+
+          <p>
+            Este espacio puede utilizarse para presentar
+            nuevos lanzamientos.
+          </p>
+
+          <div class="product-bottom">
+
+            <span class="price">
+              $--- MXN
+            </span>
+
+            <a href="#" class="buy">
+              Ver más
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===========================
+     MENSAJE DE MARCA
+=========================== -->
+
+<section class="banner" id="nosotros">
+
+  <div class="container">
+
+    <div class="banner-box">
+
+      <div>
+
+        <p
+          style="
+          font-weight:900;
+          margin-bottom:15px;
+          color:#ffe735;"
+        >
+          BLER CONTENIDO DIGITAL
+        </p>
+
+        <h2>
+
+          Leer es bueno.
+          <br>
+
+          <span style="color:#ffe735;">
+            Aplicarlo es mejor.
+          </span>
+
+        </h2>
+
+      </div>
+
+
+      <div class="smiley">
+
+        ☺
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===========================
+     BLOG
+=========================== -->
+
+<section class="section" id="blog">
+
+  <div class="container">
+
+    <h2 class="section-title reveal">
+      Blog BLER.
+    </h2>
+
+    <p class="section-subtitle reveal">
+
+      Ideas, consejos y contenido gratuito para seguir
+      aprendiendo incluso antes de comprar uno de nuestros ebooks.
+
+    </p>
+
+
+    <div class="blog-grid">
+
+
+      <!-- ARTÍCULO PRINCIPAL -->
+
+      <article class="article reveal">
+
+        <div class="article-image">
+
+          <span class="article-number">
+            01
+          </span>
+
+        </div>
+
+        <div class="article-content">
+
+          <span class="article-tag">
+            Desarrollo
+          </span>
+
+          <h3>
+            5 hábitos que pueden cambiar tu forma de aprender
+          </h3>
+
+          <p>
+            Pequeñas acciones que pueden ayudarte a consumir
+            información de una manera más inteligente.
+          </p>
+
+          <a href="#" class="read-more">
+            Leer artículo →
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ARTÍCULO 2 -->
+
+      <article class="article reveal">
+
+        <div class="article-image">
+
+          <span class="article-number">
+            02
+          </span>
+
+        </div>
+
+        <div class="article-content">
+
+          <span class="article-tag">
+            Productividad
+          </span>
+
+          <h3>
+            Cómo aprovechar mejor un ebook
+          </h3>
+
+          <p>
+            Leer más no siempre significa aprender más.
+            Aprende a sacar provecho de cada lectura.
+          </p>
+
+          <a href="#" class="read-more">
+            Leer artículo →
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ARTÍCULO 3 -->
+
+      <article class="article reveal">
+
+        <div class="article-image">
+
+          <span class="article-number">
+            03
+          </span>
+
+        </div>
+
+        <div class="article-content">
+
+          <span class="article-tag">
+            Ideas
+          </span>
+
+          <h3>
+            Conocimiento digital en una nueva era
+          </h3>
+
+          <p>
+            Por qué el contenido digital está cambiando
+            la forma en la que aprendemos.
+          </p>
+
+          <a href="#" class="read-more">
+            Leer artículo →
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===========================
+     NEWSLETTER
+=========================== -->
+
+<section class="newsletter">
+
+  <div class="container">
+
+    <div class="newsletter-card reveal">
+
+      <h2>
+        Lo nuevo de BLER,
+        <span class="highlight">
+          directo a ti.
+        </span>
+      </h2>
+
+      <p>
+
+        Entérate de nuevos ebooks, artículos,
+        promociones y contenido exclusivo.
+
+      </p>
+
+
+      <!--
+      ESTE FORMULARIO ES VISUAL.
+      MÁS ADELANTE PODEMOS CONECTARLO
+      CON BREVO, MAILCHIMP, FORMSPREE, ETC.
+      -->
+
+      <form
+        class="email-form"
+        onsubmit="suscribir(event)"
+      >
+
+        <input
+          type="email"
+          placeholder="Tu correo electrónico"
+          required
+        >
+
+        <button type="submit">
+          Suscribirme
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+
+<footer id="redes">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+
+      <div class="footer-brand">
+
+        <h2>
+          BLER
+          <span class="highlight">●</span>
+        </h2>
+
+        <p>
+
+          Contenido digital para personas que quieren
+          aprender, crecer y llevar sus ideas más lejos.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="footer-column">
+
+        <h4>
+          Navegación
+        </h4>
+
+        <a href="#inicio">
+          Inicio
+        </a>
+
+        <a href="#tienda">
+          Ebooks
+        </a>
+
+        <a href="#blog">
+          Blog
+        </a>
+
+        <a href="#nosotros">
+          Nosotros
+        </a>
+
+      </div>
+
+
+
+      <div class="footer-column">
+
+        <h4>
+          Síguenos
+        </h4>
+
+
+        <!--
+        REEMPLAZA # POR TU FACEBOOK
+        -->
+
+        <a
+          href="#"
+          target="_blank"
+        >
+          Facebook ↗
+        </a>
+
+
+        <!--
+        REEMPLAZA # POR TU INSTAGRAM
+        -->
+
+        <a
+          href="#"
+          target="_blank"
+        >
+          Instagram ↗
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+      <p>
+        © 2026 BLER Contenido Digital.
+        Todos los derechos reservados.
+      </p>
+
+      <p>
+        Hecho para el mundo digital.
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<!-- ===========================
+     JAVASCRIPT
+=========================== -->
+
+<script>
+
+
+  /* MENÚ PARA CELULAR */
+
+  const menuButton =
+    document.getElementById("menuButton");
+
+  const navLinks =
+    document.getElementById("navLinks");
+
+
+  menuButton.addEventListener(
+    "click",
+    function () {
+
+      navLinks.classList.toggle("active");
+
+    }
+  );
+
+
+  /* CERRAR MENÚ AL PRESIONAR UN ENLACE */
+
+  document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          navLinks.classList.remove("active");
+
+        }
+      );
+
+    });
+
+
+
+  /* ANIMACIONES AL HACER SCROLL */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.15
+      }
+
+    );
+
+
+  revealElements.forEach(element => {
+
+    observer.observe(element);
+
+  });
+
+
+
+  /* FORMULARIO NEWSLETTER */
+
+  function suscribir(event) {
+
+    event.preventDefault();
+
+    alert(
+      "¡Gracias! Próximamente recibirás contenido de BLER."
+    );
+
+    event.target.reset();
+
+  }
+
+
+</script>
+
+
+</body>
+</html>
